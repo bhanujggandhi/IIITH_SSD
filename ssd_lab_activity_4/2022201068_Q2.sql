@@ -1,0 +1,13 @@
+USE CUSTOMER_DB; 
+
+DELIMITER //
+CREATE PROCEDURE spGetNamesByCity
+(
+IN city VARCHAR(50)
+)
+BEGIN
+SELECT CUST_NAME FROM customer WHERE WORKING_AREA=city;
+END;
+//
+
+call spGetNamesByCity("Bangalore")

@@ -1,0 +1,11 @@
+USE CUSTOMER_DB;
+
+DELIMITER //
+CREATE PROCEDURE spGetCustomersFromBalance()
+BEGIN
+SELECT CUST_NAME, GRADE FROM customer WHERE OPENING_AMT+RECEIVE_AMT > 10000.00;
+END;
+//
+
+call spGetCustomersFromBalance();
+//
