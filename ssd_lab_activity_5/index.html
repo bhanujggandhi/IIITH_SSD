@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="maindiv">
+      <h1 id="header">Welcome to SSD Lab</h1>
+
+      <form name="loginform" action="studentRecords.html">
+        <div class="inputbox">
+          <div>
+            <p>
+              <label for="username">Username</label>
+            </p>
+            <input type="text" name="username" />
+          </div>
+          <div>
+            <p>
+              <label for="password">Password</label>
+            </p>
+            <input type="password" name="password" />
+          </div>
+
+          <div
+            onClick="document.forms['loginform'].submit();"
+            class="buttoncontainer"
+          >
+            <div class="button">Login</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

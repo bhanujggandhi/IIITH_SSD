@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="studentRecords.css" />
+    <title>Student Records</title>
+    <script type="text/javascript">
+      let addentry = () => {
+        let table = document.getElementById("studenttable");
+        let name = document.getElementById("nme").value;
+        let roll = document.getElementById("roll").value;
+        let len = table.rows.length;
+        if (name !== "" && roll !== "") {
+          let entry = table.insertRow(len);
+          let col1 = entry.insertCell(0);
+          let col2 = entry.insertCell(1);
+
+          col1.innerHTML = roll;
+          col2.innerHTML = name;
+
+          document.getElementById("nme").value = "";
+          document.getElementById("roll").value = "";
+        }
+      };
+
+      let removeentry = () => {
+        let table = document.getElementById("studenttable");
+        let len = table.rows.length;
+        if (len > 1) {
+          let li = table.rows;
+          len = table.rows.length;
+          li[len - 1].remove();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="maindiv">
+      <h1 id="header">Student Records</h1>
+      <div class="inputbox">
+        <span class="inputspan">
+          <input id="roll" type="text" placeholder="Roll No." />
+        </span>
+        <span class="inputspan">
+          <input id="nme" type="text" placeholder="Name" />
+        </span>
+        <span class="addbuttoncontainer">
+          <span class="addbutton" onclick="addentry()">Add New</span>
+        </span>
+      </div>
+
+      <div>
+        <table id="studenttable">
+          <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+          </tr>
+        </table>
+      </div>
+      <div onclick="removeentry()" class="buttoncontainer">
+        <div class="button">Delete Last Entry</div>
+      </div>
+    </div>
+  </body>
+</html>
