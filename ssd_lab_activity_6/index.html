@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js"></script>
+    <title>Team Form</title>
+  </head>
+  <body>
+    <div>
+      <h2>Team Form</h2>
+    </div>
+    <div>
+      <form onsubmit="return submit_form(event)">
+        <table>
+          <tr>
+            <td><label for="mname">Manager Name</label></td>
+            <td><input required type="text" name="mname" id="mname" /></td>
+          </tr>
+          <tr>
+            <td><label for="gemail">Group Email</label></td>
+            <td><input type="email" required name="gemail" id="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="suname">Server Username</label></td>
+            <td>
+              <input
+                type="text"
+                name="suname"
+                id="uname"
+                onkeyup="validateUsername()"
+              />
+            </td>
+            <td>
+              <span id="uerror"> </span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="spswd">Server Password</label></td>
+            <td><input required type="password" name="spswd" id="spswd" /></td>
+          </tr>
+          <tr>
+            <td><label for="cpswd">Confirm Password</label></td>
+            <td>
+              <input
+                required
+                type="password"
+                name="cpswd"
+                id="cpswd"
+                onblur="confirmPass()"
+              />
+            </td>
+            <td>
+              <span id="error"> </span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lead">Team Lead</label></td>
+            <td>
+              <select name="lead" id="lead">
+                <option value="" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="John">John</option>
+                <option value="Bhanuj">Bhanuj</option>
+                <option value="Michael">Michael</option>
+                <option value="Ram">Ram</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lead">Team Member</label></td>
+            <td>
+              <ul class="source" ondrag="drags()">
+                <li draggable="true" class="dragelement">Rahul</li>
+                <li draggable="true" class="dragelement">Ram</li>
+                <li draggable="true" class="dragelement">Rajat</li>
+                <li draggable="true" class="dragelement">Ridham</li>
+              </ul>
+            </td>
+            <td><ul id="members" class="dest" ondrag="dragd()"></ul></td>
+          </tr>
+        </table>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
