@@ -13,7 +13,7 @@ with open("reading2.txt") as f:
     tot = 0
     for line in lines:
         tot += 1
-        if line == "\n" or tot == n:
+        if line == "\n" or tot == n+1:
             if len(tempmat) == 0:
                 continue
             matgrid.append(tempmat)
@@ -21,7 +21,7 @@ with open("reading2.txt") as f:
             i = 0
         else:
             arr = line.split("\t")
-            if i == 43:
+            if i == 21:
                 timestamps.append(arr[0])
             i += 1
             arr.pop()
@@ -96,8 +96,8 @@ left = []
 right = []
 
 temp = [0, 0, 0]
-for i in range(len(footdata)):
-    if (footdata[i][0] > 1 or i == len(footdata)-1):
+for i in range(len(footdata)+1):
+    if (i == len(footdata) or footdata[i][0] > 1):
         if flag == False:
             left.append(temp)
         else:
@@ -109,7 +109,6 @@ for i in range(len(footdata)):
             temp[0] = i
             temp[1] = footdata[i][0]
             temp[2] = footdata[i][1]
-
 
 for i in left:
     ind = -1

@@ -5,7 +5,7 @@ from datetime import datetime
 matgrid = []
 timestamps = []
 
-with open("reading2.txt") as f:
+with open("reading.txt") as f:
     lines = f.readlines()
     tempmat = []
     i = 0
